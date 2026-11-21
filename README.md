@@ -20,9 +20,9 @@ Supervisors: Prof. Dr. Reiner Creutzburg (primary), Navaneeth Shivananjappa, M.S
 | `data/processed` | Cleaned per-block tables produced by `analysis/` |
 | `analysis` | Analysis code, figures and tables; reruns from raw data with one command |
 | `diary` | RQ4 effort diary (`effort_diary.csv`), decisions log, AI-use log |
-| `references` | Checked bibliography (`references.bib`), DOI check report, Zotero import steps |
+| `references` | DOI check report, DOI list, Zotero import steps (the bibliography itself is `thesis/references.bib`) |
 | `docs` | SRH rules, evidence matrix, literature update and search log, lab design, measurement plan |
-| `thesis` | LaTeX source of the thesis |
+| `thesis` | LaTeX source of the thesis, incl. `references.bib`; self-contained, so it can be uploaded to Overleaf as one zip |
 
 Pinned versions live in `versions.md`. Never commit secrets: keys, tokens and real credentials stay out of Git.
 
