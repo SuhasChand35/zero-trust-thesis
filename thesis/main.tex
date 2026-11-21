@@ -1,0 +1,53 @@
+% Master thesis: Design and Evaluation of a Resource-Level Zero Trust Access Prototype Against a Perimeter Baseline
+% Layout values marked [CHECK SRH] are placeholders until the SRH Thesis Template on eCampus is read (docs/srh-rules.md).
+\documentclass[12pt,a4paper,oneside]{report}
+
+\usepackage[british]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}   % [CHECK SRH margins]
+\usepackage{setspace}\onehalfspacing           % [CHECK SRH line spacing]
+\usepackage{csquotes}
+\usepackage[style=apa,backend=biber]{biblatex} % APA 7: matches the proposal and SRH's public guidance [confirm edition on eCampus]
+\addbibresource{../references/references.bib}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}                           % units: \SI{10}{\milli\second}
+\usepackage{listings}                          % configs and code in appendices
+\usepackage{xurl}                              % line breaks in long URLs
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\thesistitle}{Design and Evaluation of a Resource-Level Zero Trust Access Prototype Against a Perimeter Baseline}
+
+\begin{document}
+
+\pagenumbering{roman}
+\input{frontmatter/titlepage}
+\input{frontmatter/declaration}
+\input{frontmatter/ai-declaration}
+\input{frontmatter/abstract}
+\tableofcontents
+\listoffigures
+\listoftables
+\input{frontmatter/abbreviations}
+
+\clearpage
+\pagenumbering{arabic}
+\input{chapters/ch1-introduction}
+\input{chapters/ch2-background}
+\input{chapters/ch3-design-implementation}
+\input{chapters/ch4-method}
+\input{chapters/ch5-results}
+\input{chapters/ch6-discussion}
+\input{chapters/ch7-conclusion}
+
+\printbibliography[heading=bibintoc,title={References}]
+
+\appendix
+\input{appendices/appendix-a-protocol}
+\input{appendices/appendix-b-configs}
+\input{appendices/appendix-c-scripts}
+\input{appendices/appendix-d-data}
+
+\end{document}

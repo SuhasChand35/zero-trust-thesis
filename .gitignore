@@ -1,0 +1,33 @@
+# Raw measurement data stays out of Git (checksummed and backed up encrypted instead)
+data/raw/*
+!data/raw/README.md
+# Secrets
+*.key
+*.pem
+*.p12
+.env
+secrets/
+# Python / notebooks
+__pycache__/
+.venv/
+.ipynb_checkpoints/
+# LaTeX build files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+# Thesis build output
+thesis/main.pdf
+# Windows / OneDrive / Office
+desktop.ini
+Thumbs.db
+~$*
