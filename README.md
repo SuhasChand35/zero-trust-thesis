@@ -21,7 +21,7 @@ Supervisors: Prof. Dr. Reiner Creutzburg (primary), Navaneeth Shivananjappa, M.S
 | `analysis` | Analysis code, figures and tables; reruns from raw data with one command |
 | `diary` | RQ4 effort diary (`effort_diary.csv`), decisions log, AI-use log |
 | `references` | Checked bibliography (`references.bib`), DOI check report, Zotero import steps |
-| `docs` | SRH thesis rules and other admin notes |
+| `docs` | SRH rules, evidence matrix, literature update and search log, lab design, measurement plan |
 | `thesis` | LaTeX source of the thesis |
 
 Pinned versions live in `versions.md`. Never commit secrets: keys, tokens and real credentials stay out of Git.

@@ -1,7 +1,40 @@
 \chapter{Background and Related Work}\label{ch:background}
+% OUTLINE (21 Nov 2026). Sources and angles come from docs/evidence-matrix.csv and docs/literature-update-2026-11.md.
+% Aim in every section: compare and critique (what each source shows, what it cannot show), not a list of summaries.
+
 \section{Zero Trust Principles and NIST SP 800-207}
+% rose2020zta: tenets, PE/PA/PEP, deployment variants -> map to this lab (OPA/Envoy RBAC = decision, control utility = PA, Envoy = PEP).
+% cisa2023ztmm: maturity stages and pillars -> where the prototype sits (identity; devices only partly; networks).
+% [candidate] NIST SP 800-207A: identity-based segmentation with gateways/sidecars - the design this thesis tests.
+% Critique: guidance defines roles but gives no cost or timing evidence.
+
 \section{Attribute-Based Access Control and Policy Engines}
+% hu2014abac: subject/object/action/environment attributes; trustworthy attributes matter as much as rules.
+% [candidate] NIST SP 800-204B: ABAC with mutual authentication in a service mesh.
+% OPA-Envoy docs: external authorisation per request; what the plugin receives as input.
+% Critique: policy engines add a dependency (motivates S4) and a network hop (motivates H2).
+
 \section{Deployed Zero Trust and Critiques}
+% ward2014beyondcorp: feasibility at scale, user/device context through an access proxy; no controlled timing data.
+% borchert2025 (SP 1800-35): 19 example builds, functional demonstrations; [verify] no latency/effort measurement.
+% fernandez2024: pattern-based critique; ZTA has its own threats.
+% Angle: deployment reports show "it works", not "what it costs".
+
 \section{Microsegmentation and Experimental Evaluations}
+% basta2022: exposure (connectivity graphs) vs robustness (attack graphs) -> justifies separate reachability and permission checks (H1).
+% noel2023: optimisation trading attacker effort against mission access -> check legitimate access too.
+% mushtaq2025: implementation gaps; manual policy configuration overhead -> RQ4.
+% nkinyili2026: closest testbed; dynamic trust, policy latency per evaluation cycle; differs from equal explicit permissions.
+% [candidates] Farkiani et al. 2025 (L3 policy in service mesh, <1 ms), Alayed et al. 2026 (SDN ZT latency).
+% Angle: experiments rarely hold permissions equal across configurations or measure withdrawal and effort.
+
 \section{Token Revocation and Continuous Access Evaluation}
+% rfc7009 (revocation), rfc7662 (introspection): offline JWT validation cannot show current authorisation.
+% tulshibagwale2025ssf, cappalli2025caep: event delivery for session/claims changes; final specs (Aug 2025).
+% [candidate] Microsoft Entra CAE docs: event propagation can still take minutes.
+% Keep apart: revoking a token vs withdrawing a resource permission while the token stays valid (RQ2).
+
 \section{Research Gap}
+% Synthesis, not a new list: equal permissions, short-lived tokens, network controls held constant for policy
+% comparison, live withdrawal under valid tokens, failure/recovery windows, measured effort (basta2022; borchert2025; nkinyili2026).
+% Keep the proposal's hedge: the gap is inferred from the reviewed evidence.

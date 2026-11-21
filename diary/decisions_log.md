@@ -57,9 +57,27 @@ Entries before 21 Nov 2026 were logged retrospectively from the proposal revisio
 - **Affects:** thesis/, references/
 - **Agreed with supervisor:** [to confirm once the SRH guidelines on eCampus are read]
 
+### 2026-11-21: Candidate image pins
+- **Decision:** Use Envoy v1.39.3 (proposal), OPA 1.22.0-envoy and Keycloak 26.8.2 as candidate pins; digests in `versions.md`. Final at the protocol freeze.
+- **Why:** Latest releases at lookup; pinning early keeps the lab build and pilot on one version.
+- **Alternatives considered:** Upgrading Envoy beyond the proposal's pin (not needed).
+- **Affects:** all configurations; pilot check A (JWT settings) must run on these versions.
+- **Agreed with supervisor:** not needed
+
+### 2026-11-21: SSF and CAEP cited from their final specification pages
+- **Decision:** Point both references to the `-final` pages (same title, authors and date, 29 Aug 2025).
+- **Why:** Final Specifications are not revised further, so the citation stays stable.
+- **Alternatives considered:** Keep the proposal's URLs.
+- **Affects:** references/, Ch2 2.5
+- **Agreed with supervisor:** not needed
+
 ## Open questions
 
 - [ ] SRH length limit, formatting rules, AI declaration wording and submission format (see `docs/srh-rules.md`).
 - [ ] Must the SRH Word *Thesis Template* be used, or is a LaTeX thesis with the same layout accepted?
 - [ ] Sources for the exact sign test and the block bootstrap (Ch4 §4.5).
-- [ ] Outcome of the 16–20 Nov local-update time box (write the decision here).
+- [ ] Local-update time box (planned 16–20 Nov) has not run yet: schedule five days for it right after the Baseline build and log the outcome here.
+- [ ] Admin device: the proposal lists two registered devices, but admin-to-C needs an enabled, associated device (`configs/shared/manifest.yaml`).
+- [ ] Add NIST SP 800-207A and SP 800-204B to the bibliography after reading them (`docs/literature-update-2026-11.md`).
+- [ ] Re-run the literature searches in IEEE Xplore, ACM DL and Google Scholar and log them for Ch4.
+- [ ] Re-plan the lab weeks: the lab build has not started, so Gate 1 (30 Nov) and Gate 2 (15 Dec) need new dates or the proposal's cut order.

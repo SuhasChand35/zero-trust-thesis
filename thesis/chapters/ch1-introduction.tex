@@ -1,8 +1,31 @@
 \chapter{Introduction}\label{ch:intro}
+% OUTLINE (21 Nov 2026). Write the prose yourself from these points; keep "this thesis"/passive voice (docs/srh-rules.md).
+
 \section{Background and Context}
+% - Network location is not a reason to trust a request (rose2020zta).
+% - Authentication establishes identity; authorisation permits resource actions; least privilege and user/device context.
+% - Roles: policy engine decides, policy administrator applies, enforcement point controls the connection.
+% - Each new HTTP request is reassessed and logged.
+
 \section{Problem Statement}
+% - A perimeter set-up can already enforce explicit permissions per request and support live grant withdrawal.
+% - The open question is the operational cost of adding network restrictions and an external policy engine:
+%   latency, withdrawal delay, failure/recovery behaviour, configuration effort.
+% - Reference the fallback for unreliable local updates (Ch3/Ch4).
+
 \section{Research Questions and Hypotheses}\label{sec:rqs}
-% RQ1--RQ4, H1 and H2 exactly as in the frozen protocol
+% Copy exactly from the frozen protocol (currently proposal Table 1 and Section 2.1):
+% RQ1 With equal permissions, how does Restricted differ from Baseline in direct reachability and forbidden-content access?
+% RQ2 With matched network rules, how do Restricted's local updates and Prototype's OPA updates differ in grant-withdrawal delay during valid tokens?
+% RQ3 How long are Prototype's failure and recovery windows during an OPA fault, and what latency overhead does its policy path impose?
+% RQ4 Which network, integration, and maintenance tasks account for additional effort across the three configurations?
+% H1 Network restrictions reduce reachability while preserving permissions (verification; pass/fail/inconclusive per Table 2).
+% H2 The median blockwise increase in p95 latency of Prototype over Restricted is below 10 ms at one- and five-client concurrency
+%    (exact Wilcoxon signed-rank on increase minus 10 ms, Holm-adjusted). Revocation comparison: no assumed winner.
+
 \section{Scope and Limitations of the Implementation}
-% partial NIST SP 800-207 implementation; endpoint-health attestation out of scope
+% - Partial NIST SP 800-207: device context = certificate identity, association, enabled flag; no health attestation.
+% - One isolated host, three read-only resources, synthetic users; HA, fleet management, production migration excluded.
+
 \section{Structure of the Thesis}
+% One or two sentences per chapter (Ch2 background ... Ch7 conclusion). Write last.

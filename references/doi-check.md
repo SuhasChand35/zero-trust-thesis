@@ -37,3 +37,5 @@ DOIs were resolved against the Crossref API (api.crossref.org/works/<DOI>); web 
 2. **The timetable says 22 references; the proposal has 24.** Use 24 (25 with Holm).
 3. The analysis plan also uses an exact sign test and block-bootstrap intervals with no source. [CITATION NEEDED – verify] before Ch4 §4.5 is written: a standard nonparametric statistics text for the sign test, and a block-bootstrap reference.
 4. Web sources were last read on 12 Oct 2026 per the proposal. Update `urldate` whenever you re-read a page for the thesis.
+
+5. SSF 1.0 and CAEP 1.0 are Final Specifications; the .bib now points to the stable `-final` pages instead of the proposal's URLs (same date and authors). See `docs/literature-update-2026-11.md`.

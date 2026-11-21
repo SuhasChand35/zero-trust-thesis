@@ -1,0 +1,36 @@
+# Shared permission manifest: single source of truth for all three configurations.
+# DRAFT transcribed from the proposal (Sections 4.1 and Appendix A) on 2026-11-21 with AI assistance.
+# Baseline/Restricted encode it as Envoy RBAC rules; Prototype encodes it as OPA data.
+# Any change here must be applied to every configuration and logged in diary/decisions_log.md.
+
+users:
+  alice: { role: staff }
+  bob:   { role: staff }
+  admin: { role: administrator }
+
+devices:
+  # Device context = client-certificate identity + association + enabled flag (partial NIST SP 800-207).
+  dev-alice: { cert_cn: dev-alice, associated_user: alice, enabled: true }
+  dev-bob:   { cert_cn: dev-bob,   associated_user: bob,   enabled: true }
+  # [DECIDE] The proposal lists two registered devices but admin-to-C also requires an
+  # enabled, associated device. Add dev-admin, or associate admin with one of the two.
+
+resources:
+  A: { description: project documents,     path_prefix: /a/ }
+  B: { description: departmental records,  path_prefix: /b/ }
+  C: { description: administration,        path_prefix: /c/ }
+
+actions_allowed: [GET]   # read-only resources; every other method is denied
+
+grants:                  # everything not listed is denied (default deny)
+  - { user: alice, resource: A, action: GET }
+  - { user: bob,   resource: B, action: GET }
+  - { user: admin, resource: C, action: GET }
+
+# Conditions applied to every grant: valid JWT (iss, aud, exp; require_expiration, 1 s skew),
+# valid client certificate, device enabled and associated with the token's user.
+
+# S1 forbidden/invalid variants derive from this file: other user/resource pairs, unsupported
+# methods, missing/expired/invalid token, invalid certificate, disabled device, mismatched device.
+
+# S3 withdrawal: remove the alice/A grant while bob/B traffic continues; restore after the block.
