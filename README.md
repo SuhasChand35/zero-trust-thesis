@@ -1,4 +1,7 @@
-# Resource-level Zero Trust access prototype vs perimeter baseline (M.Sc. thesis)
+# zero-trust-thesis
+Master’s thesis project at SRH Berlin. I build a small Zero Trust access prototype with Keycloak, Envoy (mTLS) and Open Policy Agent, then compare it with a classic perimeter setup. I measure security, latency and how fast access can be revoked.
+
+Working title: *Design and Evaluation of a Resource-Level Zero Trust Access Prototype Against a Perimeter Baseline* (M.Sc. thesis).
 
 Suhas Chandan Jagadeesha, SRH Berlin University of Applied Sciences.
 Supervisors: Prof. Dr. Reiner Creutzburg (primary), Navaneeth Shivananjappa, M.Sc. (secondary).
@@ -34,4 +37,4 @@ Needs a TeX distribution with biber and biblatex-apa (TeX Live or MiKTeX).
 
 ## Remote
 
-Private GitHub repository: https://github.com/SuhasChand35/zero-trust-thesis
+GitHub repository: https://github.com/SuhasChand35/zero-trust-thesis
