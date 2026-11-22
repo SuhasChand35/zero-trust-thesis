@@ -71,6 +71,20 @@ Entries before 21 Nov 2026 were logged retrospectively from the proposal revisio
 - **Affects:** references/, Ch2 2.5
 - **Agreed with supervisor:** not needed
 
+### 2026-11-22: Lab is built by the author from a written guide
+- **Decision:** Build the lab yourself from `docs/lab-build-guide.md` (AI-assisted guide with steps, settings and checks, no finished configs) on a separate Linux machine or VM with Docker Compose.
+- **Why:** RQ4 measures the author's configuration effort; AI-written configs would change what RQ4 measures.
+- **Alternatives considered:** AI-drafted configs logged as AI-assisted (rejected).
+- **Affects:** RQ4, effort diary, Ch3
+- **Agreed with supervisor:** not needed (keeps the proposal's RQ4 design)
+
+### 2026-11-22: Catch-up plan proposed
+- **Decision:** Pending lab days move to 23 Nov – 19 Dec using Saturdays; Gate 1 to 15 Dec; later gates shift about one week; submission stays 30 Mar (`docs/catch-up-plan.md`).
+- **Why:** The lab build had not started by 22 Nov.
+- **Alternatives considered:** Applying the cut order now (kept in reserve).
+- **Affects:** all gates after Gate 1
+- **Agreed with supervisor:** [to tell both supervisors]
+
 ## Open questions
 
 - [ ] SRH length limit, formatting rules, AI declaration wording and submission format (see `docs/srh-rules.md`).
@@ -80,4 +94,4 @@ Entries before 21 Nov 2026 were logged retrospectively from the proposal revisio
 - [ ] Admin device: the proposal lists two registered devices, but admin-to-C needs an enabled, associated device (`configs/shared/manifest.yaml`).
 - [ ] Add NIST SP 800-207A and SP 800-204B to the bibliography after reading them (`docs/literature-update-2026-11.md`).
 - [ ] Re-run the literature searches in IEEE Xplore, ACM DL and Google Scholar and log them for Ch4.
-- [ ] Re-plan the lab weeks: the lab build has not started, so Gate 1 (30 Nov) and Gate 2 (15 Dec) need new dates or the proposal's cut order.
+- [ ] Accept or change the catch-up plan (`docs/catch-up-plan.md`) and update the tracker.

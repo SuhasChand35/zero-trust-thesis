@@ -1,0 +1,23 @@
+id,variant,user_token,device_cert,method,path,expected_baseline,expected_restricted,expected_prototype,expected_status,notes
+1,legitimate read,alice,dev-alice,GET,/a/,allow,allow,allow,200 + MARKER-A,
+2,legitimate read,bob,dev-bob,GET,/b/,allow,allow,allow,200 + MARKER-B,
+3,legitimate read,admin,[admin device],GET,/c/,allow,allow,allow,200 + MARKER-C,needs the admin-device decision (manifest)
+4,forbidden read,alice,dev-alice,GET,/b/,deny,deny,deny,"403, no MARKER-B",
+5,forbidden read,alice,dev-alice,GET,/c/,deny,deny,deny,"403, no MARKER-C",
+6,forbidden read,bob,dev-bob,GET,/a/,deny,deny,deny,"403, no MARKER-A",
+7,forbidden read,bob,dev-bob,GET,/c/,deny,deny,deny,"403, no MARKER-C",
+8,forbidden read,admin,[admin device],GET,/a/,deny,deny,deny,"403, no MARKER-A",
+9,forbidden read,admin,[admin device],GET,/b/,deny,deny,deny,"403, no MARKER-B",
+10,unsupported action,alice,dev-alice,POST,/a/,deny,deny,deny,403,read-only resources
+11,missing token,none,dev-alice,GET,/a/,deny,deny,deny,401,rejected by jwt_authn
+12,expired token,alice (exp older than 1 s),dev-alice,GET,/a/,deny,deny,deny,401,"wait 31+ s after issue, or issue and hold"
+13,token without exp,alice (no exp),dev-alice,GET,/a/,deny,deny,deny,401,"needs a lab-only test signing key the provider trusts; [DECIDE] how, before pilot check A"
+14,bad signature,alice (tampered),dev-alice,GET,/a/,deny,deny,deny,401,"change one payload byte, keep the signature"
+15,wrong audience,alice (other aud),dev-alice,GET,/a/,deny,deny,deny,401,token from a second Keycloak client without the audience mapper
+16,wrong issuer,alice (other iss),dev-alice,GET,/a/,deny,deny,deny,401,same test-key approach as row 13
+17,no client certificate,alice,none,GET,/a/,deny,deny,deny,TLS handshake failure,no HTTP status
+18,certificate from unknown CA,alice,self-signed,GET,/a/,deny,deny,deny,TLS handshake failure,
+19,disabled device,alice,dev-alice (disabled),GET,/a/,deny,deny,deny,403,"set enabled: false in the manifest, regenerate rules"
+20,mismatched device,alice,dev-bob,GET,/a/,deny,deny,deny,403,device not associated with the token user
+21,spoofed identity header,alice + header claiming admin,dev-alice,GET,/c/,deny,deny,deny,403,header must be stripped or ignored
+22,unknown route,alice,dev-alice,GET,/x/,deny,deny,deny,404 or 403,record which; it must never reach a backend
