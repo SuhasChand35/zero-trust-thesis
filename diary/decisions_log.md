@@ -93,5 +93,5 @@ Entries before 21 Nov 2026 were logged retrospectively from the proposal revisio
 - [ ] Local-update time box (planned 16–20 Nov) has not run yet: schedule five days for it right after the Baseline build and log the outcome here.
 - [ ] Admin device: the proposal lists two registered devices, but admin-to-C needs an enabled, associated device (`configs/shared/manifest.yaml`).
 - [ ] Add NIST SP 800-207A and SP 800-204B to the bibliography after reading them (`docs/literature-update-2026-11.md`).
-- [ ] Re-run the literature searches in IEEE Xplore, ACM DL and Google Scholar and log them for Ch4.
+- [ ] Run the three search strings in ACM DL and Google Scholar yourself (IEEE Xplore done 22 Nov; the other two block automated browsing) and read the abstracts of the 11 screened-in IEEE papers.
 - [ ] Accept or change the catch-up plan (`docs/catch-up-plan.md`) and update the tracker.

@@ -43,6 +43,26 @@ Screened out: ZT papers on 5G, quantum-resilient trust, federated learning, edge
 
 | Date | Database | Search string | Hits | Screened in | Notes |
 |---|---|---|---|---|---|
-| | IEEE Xplore | | | | |
-| | ACM Digital Library | | | | |
-| | Google Scholar | | | | |
+| 2026-11-22 | IEEE Xplore (AI-assisted, browser) | `("zero trust") AND (testbed OR "experimental evaluation" OR prototype) AND (latency OR performance)`, years 2025–2026 | 103 | 5 of the first 25 by title (see below) | titles screened only; abstracts not yet read |
+| 2026-11-22 | IEEE Xplore (AI-assisted, browser) | `("Open Policy Agent" OR "policy as code" OR "external authorization") AND (Envoy OR latency OR performance)`, 2025–2026 | 65 | 4 of the first 25 by title | mostly DevSecOps/compliance papers; few measure authorisation latency |
+| 2026-11-22 | IEEE Xplore (AI-assisted, browser) | `("token revocation" OR "continuous access evaluation" OR CAEP OR "access revocation") AND (latency OR delay OR evaluation)`, 2025–2026 | 19 | 2 by title | "CAEP" also matches unrelated acronyms; noisy |
+| [your date] | ACM Digital Library | same three strings, 2025–2026 | | | blocked by a bot check for automated browsing; run it yourself |
+| [your date] | Google Scholar | same three strings, from 2025 | | | blocked by a bot check for automated browsing; run it yourself |
+
+### Screened in from IEEE Xplore by title (read abstracts next; nothing cited yet)
+
+| Search | Paper | Why it may matter |
+|---|---|---|
+| 1 | Wang, W., Sadjadi, S. M., Rishe, N., & Mahara, A. (2025). A minimal overlay-based framework for transitioning legacy infrastructure to zero trust. IEEE CNS 2025. | moving a perimeter set-up to Zero Trust; possibly a baseline comparison |
+| 1 | Bello, A. J., Diyan, M., & Asghar, I. (2025). Zero trust implementation for legacy systems using dynamic microsegmentation, RBAC, and ABAC. ICCIT 2025. | microsegmentation plus RBAC/ABAC on legacy systems: close to Restricted vs Prototype |
+| 1 | Chang, P., & Xu, G. (2026). Design and implementation of a zero trust access control model driven by session lifecycle. IEEE Access, 14. | session lifecycle and access withdrawal; relevant to RQ2 |
+| 1 | Dou, Y., & Chen, W. (2025). ZTDG: A zero trust-based lightweight database access gateway framework. IEEE IMCEC 2025. | gateway-based enforcement; check whether latency is measured |
+| 1 | Kalluru, V. V. (2026). AI-driven zero-trust access enforcement in poly-cloud ecosystems. IEEE BigDataSecurity 2026. | prototype vs conventional baseline with latency; the earlier screened-out preprint now appears published, so re-screen |
+| 2 | Brambilla, M., & Plebani, P. (2025). Scalable policy-as-code decision points for data products. IEEE ICWS 2025. | performance of policy-as-code decision points |
+| 2 | Kumar, S., Singh, P., & Singh, A. (2026). Design and empirical evaluation of a lightweight zero trust architecture for resource-constrained SMEs. CCGE 2026. | empirical ZTA evaluation |
+| 2 | Sabat, A. (2026). Zero-trust Kubernetes: Designing secure cloud-native platforms using workload identity and policy-as-code. AIS 2026. | workload identity plus policy-as-code; check for measurements |
+| 2 | Hosamalddin, A., et al. (2026). Zero trust architecture for cloud-native PaaS, identity-centric, automated and regulation-aligned. SpliTech 2026. | identity-centric cloud-native ZTA |
+| 3 | Shah, M. H., Rashid, R., Syed, M. H., Anjum, A., & Ilyas, M. (2025). Enhancing zero trust in SDN: A real-time token revocation and rotation mechanism for multi-tenant security. IEEE HONET 2025. | measured token revocation; compare with grant withdrawal (RQ2) |
+| 3 | Wang, J., Yang, H., Shen, J., & Pandi, V. (2026). State-aware agile revocation framework based on R-ABE for zero-trust gateways. MICCIS 2026. | revocation at zero-trust gateways |
+
+Screened out by title: IoT, vehicle, energy-grid, biometric, blockchain and AI-agent papers, and DevSecOps/compliance papers without access-control measurements.
