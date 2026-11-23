@@ -35,7 +35,7 @@ Test scripts are measurement work, not configuration: log them as `shared` and s
 
 **Done when:** `docker compose up -d` starts everything; from `internal-client`, a container on `management` is unreachable, and `ping 1.1.1.1` fails from every container.
 
-**Pitfall:** `internal: true` also blocks image pulls at runtime. Pull images before switching networks to internal.
+**Pitfall:** `internal: true` blocks all outbound traffic from containers, so `apk add` or `pip install` inside a running container fails. Image pulls are not affected (the Docker daemon pulls on the host's network). Put any tools a container needs into its image instead.
 
 ## Day 2: PKI (timetable 3 Nov)
 
